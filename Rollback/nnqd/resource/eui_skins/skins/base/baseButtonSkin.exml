@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="baseButtonSkin" states="up,down,disabled" width="208" height="96"
+        xmlns:e="http://ns.egret.com/eui">
+	<e:Image left="0" right="0" top="0" bottom="0" source="v2_btn_bg_times"/>
+	<e:Label text="{label}" size="42" horizontalCenter="0" verticalCenter="0" textColor="0x9e5a12"/>
+</e:Skin>

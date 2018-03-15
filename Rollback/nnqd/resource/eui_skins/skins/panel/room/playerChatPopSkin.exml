@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="playerChatPopSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="chatBg" width="360" height="60" horizontalCenter="0" verticalCenter="0" fillAlpha="0.5"/>
+	<e:Label id="chatLabel" text="标签" verticalCenter="0" height="60" verticalAlign="middle" left="10" size="36" textColor="0xce9a5f"/>
+</e:Skin>

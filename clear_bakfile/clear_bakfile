@@ -1,0 +1,50 @@
+#!/bin/bash
+# 定时清理游戏、cdn、平台的备份文件
+GameBakDir=/home/deploy/game_dep/bak
+CodeBakDir=/home/deploy/code_dep/bak
+CdnBakDir=/home/deploy/cdn_dep/bak
+mysqlbakdir=/home/deploy/bak
+
+function color(){
+    echo -e "\033[3$1m$2\033[0m"
+}
+function DelFileName(){
+    Delcount=$(($(ls $2|grep $1 |wc -l) - 6))
+    if [ $Delcount -gt 1 ];then
+	for delfile in $(\ls $2 |grep $1|sort -u|head -n$Delcount);do
+            echo $delfile > $2/delversion
+	    rm $2/$delfile
+	done
+    else
+	color 1 $1备份少于等于6个版本 
+    fi
+}
+
+##删除游戏备份
+for delpjct in `cat /root/shell/clear_bakfile/gamelist`;do
+    DelFileName $delpjct $GameBakDir 
+done
+G=$(ls $GameBakDir|wc -l)
+color 0 ################
+color 2 游戏总备份数为$G
+##删除平台备份
+for delpjct in `cat /root/shell/clear_bakfile/platlist`;do
+    DelFileName $delpjct $CodeBakDir 
+done
+P=$(ls $CodeBakDir|wc -l)
+color 0 ################
+color 2 平台总备份数为$P
+##删除CDN备份
+for delpjct in `cat /root/shell/clear_bakfile/cdnlist`;do
+    DelFileName $delpjct $CdnBakDir 
+done
+C=$(ls $CdnBakDir|wc -l)
+color 0 ################
+color 2 CDN总备份数为$C
+##删除MySQL备份
+for delpjct in `cat /root/shell/clear_bakfile/mysqllist`;do
+    DelFileName $delpjct $mysqlbakdir 
+done
+M=$(ls $mysqlbakdir|wc -l)
+color 0 ################
+color 2 mysql总备份数为$M

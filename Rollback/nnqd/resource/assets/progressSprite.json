@@ -1,0 +1,5 @@
+{"file":"progressSprite.png","frames":{
+"progress_all":{"x":0,"y":216,"w":812,"h":32,"offX":0,"offY":0,"sourceW":812,"sourceH":32},
+"progress_high":{"x":0,"y":250,"w":791,"h":8,"offX":11,"offY":6,"sourceW":812,"sourceH":32},
+"progress_now":{"x":0,"y":182,"w":812,"h":32,"offX":0,"offY":0,"sourceW":812,"sourceH":32},
+"logo":{"x":0,"y":0,"w":345,"h":180,"offX":0,"offY":0,"sourceW":346,"sourceH":180}}}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="dealPokerSkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:bull="bull.*">
+	<e:Image width="144" height="192" source="poker_back" scaleX="0.3" scaleY="0.3" rotation="180" horizontalCenter="11.5" verticalCenter="-6"/>
+	<e:Image width="144" height="192" source="poker_back" scaleX="0.3" scaleY="0.3" rotation="180" horizontalCenter="7.5" verticalCenter="-4"/>
+	<e:Image width="144" height="192" source="poker_back" scaleX="0.3" scaleY="0.3" rotation="180" horizontalCenter="3.5" verticalCenter="-2"/>
+	<e:Image id="img_poker" width="144" height="192" source="poker_back" scaleX="0.3" scaleY="0.3" rotation="180" horizontalCenter="0" verticalCenter="0"/>
+</e:Skin>

@@ -1,0 +1,29 @@
+#!/usr/bin/expect -f
+set Host [lindex $argv 0]
+set user [lindex $argv 1]
+set oldpass [lindex $argv 2]
+set newpass [lindex $argv 3]
+set timeout 10
+#--------登录
+spawn ssh $user@$Host 
+set cmd_prompt "~#"
+expect {
+"*yes/no" {send "yes\r"; exp_continue}
+"*password:" {send "$oldpass\r"}
+}
+expect {
+-re $cmd_prompt { send "\r"}
+}
+       
+#------修改密码
+send "passwd \r";
+expect {
+	"Enter New UNIX password:" {send "$newpass\r"}
+}
+expect {
+	"Retype new UNIX password:" {
+	send "$newpass\r"
+	}
+}
+expect -re $cmd_prompt
+exit

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="baseChatItemSkin" width="860" height="120" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Label id="chatLabel" size="46" text="{data.chatStr}" width="840" height="120" verticalAlign="middle" right="0" verticalCenter="0"/>
+	<e:Rect width="860" height="2" horizontalCenter="0" bottom="1"/>
+	<e:Rect height="1" width="860" horizontalCenter="0" x="10" bottom="0" fillColor="0x404040"/>
+</e:Skin>

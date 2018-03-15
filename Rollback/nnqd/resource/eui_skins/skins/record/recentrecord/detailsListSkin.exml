@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin width="1600" class="detailsListSkin" id="gao" height="600" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group width="100%" height="100" x="0" y="0">
+		<e:Rect width="100%" height="100%" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" strokeAlpha="0.8" scaleX="1" scaleY="1" fillAlpha="0.5"/>
+		<e:Label text="第" x="34.67" y="0" size="37" scaleX="1" scaleY="1" height="100%" verticalAlign="middle"/>
+		<e:Label id="num" text="1" x="77.7" y="0" size="37" scaleX="1" scaleY="1" anchorOffsetX="0" width="60.39" verticalAlign="middle" textAlign="center" height="100%"/>
+		<e:Label text="局" x="147.3" y="0" size="37" scaleX="1" scaleY="1" height="100%" verticalAlign="middle"/>
+		<e:Label id="date" text="2017" x="1160" y="0" size="37" scaleX="1" scaleY="1" height="100%" verticalAlign="middle"/>
+	</e:Group>
+	<e:Rect id="rec" width="100%" height="500" x="0" y="100" anchorOffsetX="0" anchorOffsetY="0" strokeAlpha="0.5" fillAlpha="0.5"/>
+	<e:Group id="Self" width="100%" height="500" x="0" y="102">
+		<e:Rect width="100%" height="70" x="0" y="15" fillColor="0xffffff" fillAlpha="0.2" strokeAlpha="0.1" visible="false"/>
+		<e:Rect width="100%" height="70" x="0" y="115" fillColor="0xFFFFFF" fillAlpha="0.2" visible="false"/>
+		<e:Rect width="100%" height="70" x="0" y="215" fillColor="0xFFFFFF" fillAlpha="0.2" visible="false"/>
+		<e:Rect width="100%" height="70" x="0" y="315" fillColor="0xFFFFFF" fillAlpha="0.2" visible="false"/>
+		<e:Rect width="100%" height="70" x="0" y="415" fillColor="0xFFFFFF" fillAlpha="0.2" visible="false"/>
+	</e:Group>
+	<e:Group id="group_0" width="100%" height="100" x="0" y="100">
+		<e:Image id="img_banker" width="20" height="20" source="v2roomSprite.v2_icon_zhuang" scaleX="3" scaleY="3" verticalCenter="0" x="28.78"/>
+		<e:Label id="lb_name" textAlign="center" size="38" verticalAlign="middle" width="268.01" right="1254" anchorOffsetX="0" text="{data.name}" top="0" bottom="0" textColor="0xffffff"/>
+		<e:Label text="押注" x="355.66" anchorOffsetY="0" height="95.33" verticalAlign="middle" verticalCenter="-0.5" textColor="0xffae2c"/>
+		<e:Label id="yazhu" text="x1" x="427.66" anchorOffsetY="0" height="95.33" verticalCenter="-0.5" verticalAlign="middle" textColor="0xffae2c"/>
+		<e:Group id="gp_poker" width="450" horizontalCenter="0" height="90%" verticalCenter="0">
+		</e:Group>
+		<e:Label id="lb_type" textAlign="center" size="38" verticalAlign="middle" width="110" horizontalCenter="385" anchorOffsetX="0" textColor="0xffae2c" text="没牛" top="0" bottom="0"/>
+		<e:Label id="lb_score" textAlign="center" size="38" verticalAlign="middle" width="105.34" anchorOffsetX="0" text="0" top="0" bottom="0" x="1297.94" textColor="0xffae2c"/>
+	</e:Group>
+	<e:Group id="group_1" width="100%" height="100" x="0" y="200" visible="false">
+		<e:Image id="img_banker0" width="20" height="20" source="v2roomSprite.v2_icon_zhuang" scaleX="3" scaleY="3" verticalCenter="0" x="28.78"/>
+		<e:Label id="lb_name0" textAlign="center" size="38" verticalAlign="middle" width="268.01" right="1254" anchorOffsetX="0" text="{data.name}" top="0" bottom="0" textColor="0xFFFFFF"/>
+		<e:Label text="押注" x="355.66" anchorOffsetY="0" height="95.33" verticalAlign="middle" verticalCenter="-0.5" textColor="0xFFAE2C"/>
+		<e:Label id="yazhu0" text="x1" x="427.66" anchorOffsetY="0" height="95.33" verticalCenter="-0.5" verticalAlign="middle" textColor="0xFFAE2C"/>
+		<e:Group id="gp_poker0" width="450" horizontalCenter="0" height="90%" verticalCenter="0"/>
+		<e:Label id="lb_type0" textAlign="center" size="38" verticalAlign="middle" width="110" horizontalCenter="385" anchorOffsetX="0" textColor="0xFFAE2C" text="没牛" top="0" bottom="0"/>
+		<e:Label id="lb_score0" textAlign="center" size="38" verticalAlign="middle" width="105.34" anchorOffsetX="0" text="0" top="0" bottom="0" x="1297.94" textColor="0xFFAE2C"/>
+	</e:Group>
+	<e:Group id="group_2" width="100%" height="100" x="0" y="300" visible="false">
+		<e:Image id="img_banker1" width="20" height="20" source="v2roomSprite.v2_icon_zhuang" scaleX="3" scaleY="3" verticalCenter="0" x="28.78"/>
+		<e:Label id="lb_name1" textAlign="center" size="38" verticalAlign="middle" width="268.01" right="1254" anchorOffsetX="0" text="{data.name}" top="0" bottom="0" textColor="0xFFFFFF"/>
+		<e:Label text="押注" x="355.66" anchorOffsetY="0" height="95.33" verticalAlign="middle" verticalCenter="-0.5" textColor="0xFFAE2C"/>
+		<e:Label id="yazhu1" text="x1" x="427.66" anchorOffsetY="0" height="95.33" verticalCenter="-0.5" verticalAlign="middle" textColor="0xFFAE2C"/>
+		<e:Group id="gp_poker1" width="450" horizontalCenter="0" height="90%" verticalCenter="0"/>
+		<e:Label id="lb_type1" textAlign="center" size="38" verticalAlign="middle" width="110" horizontalCenter="385" anchorOffsetX="0" textColor="0xFFAE2C" text="没牛" top="0" bottom="0"/>
+		<e:Label id="lb_score1" textAlign="center" size="38" verticalAlign="middle" width="105.34" anchorOffsetX="0" text="0" top="0" bottom="0" x="1297.94" textColor="0xFFAE2C"/>
+	</e:Group>
+	<e:Group id="group_3" width="100%" height="100" x="0" y="400" visible="false">
+		<e:Image id="img_banker2" width="20" height="20" source="v2roomSprite.v2_icon_zhuang" scaleX="3" scaleY="3" verticalCenter="0" x="28.78"/>
+		<e:Label id="lb_name2" textAlign="center" size="38" verticalAlign="middle" width="268.01" right="1254" anchorOffsetX="0" text="{data.name}" top="0" bottom="0" textColor="0xFFFFFF"/>
+		<e:Label text="押注" x="355.66" anchorOffsetY="0" height="95.33" verticalAlign="middle" verticalCenter="-0.5" textColor="0xFFAE2C"/>
+		<e:Label id="yazhu2" text="x1" x="427.66" anchorOffsetY="0" height="95.33" verticalCenter="-0.5" verticalAlign="middle" textColor="0xFFAE2C"/>
+		<e:Group id="gp_poker2" width="450" horizontalCenter="0" height="90%" verticalCenter="0"/>
+		<e:Label id="lb_type2" textAlign="center" size="38" verticalAlign="middle" width="110" horizontalCenter="385" anchorOffsetX="0" textColor="0xFFAE2C" text="没牛" top="0" bottom="0"/>
+		<e:Label id="lb_score2" textAlign="center" size="38" verticalAlign="middle" width="105.34" anchorOffsetX="0" text="0" top="0" bottom="0" x="1297.94" textColor="0xFFAE2C"/>
+	</e:Group>
+	<e:Group id="group_4" width="100%" height="100" x="0" y="500" visible="false">
+		<e:Image id="img_banker3" width="20" height="20" source="v2roomSprite.v2_icon_zhuang" scaleX="3" scaleY="3" verticalCenter="0" x="31.81"/>
+		<e:Label id="lb_name3" textAlign="center" size="38" verticalAlign="middle" width="268.01" right="1254" anchorOffsetX="0" text="{data.name}" top="0" bottom="0" textColor="0xFFFFFF"/>
+		<e:Label text="押注" x="355.66" anchorOffsetY="0" height="95.33" verticalAlign="middle" verticalCenter="-0.5" textColor="0xFFAE2C"/>
+		<e:Label id="yazhu3" text="x1" x="427.66" anchorOffsetY="0" height="95.33" verticalCenter="-0.5" verticalAlign="middle" textColor="0xFFAE2C"/>
+		<e:Group id="gp_poker3" width="450" horizontalCenter="0" height="90%" verticalCenter="0"/>
+		<e:Label id="lb_type3" textAlign="center" size="38" verticalAlign="middle" width="110" horizontalCenter="385" anchorOffsetX="0" textColor="0xFFAE2C" text="没牛" top="0" bottom="0"/>
+		<e:Label id="lb_score3" textAlign="center" size="38" verticalAlign="middle" width="105.34" anchorOffsetX="0" text="0" top="0" bottom="0" x="1297.94" textColor="0xFFAE2C"/>
+	</e:Group>
+
+</e:Skin>

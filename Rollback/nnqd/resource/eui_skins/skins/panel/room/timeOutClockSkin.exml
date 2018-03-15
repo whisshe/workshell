@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="timeOutClockSkin" width="150" height="141" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="v2_icon_clock" width="150" height="141" verticalCenter="0" horizontalCenter="0"/>
+	<e:Label id="timeLabel" text="1" bold="true" textColor="0xDA1C1C" verticalAlign="middle" size="62" verticalCenter="-11.5" textAlign="center" horizontalCenter="-2.5"/>
+</e:Skin>

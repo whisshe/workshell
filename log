@@ -1,0 +1,47 @@
+Adding local address: 172.18.27.91
+Ethernet link detected
+?  new connection not in connection-to-inode table before refresh.
+:) inode for connection found after refresh.
+   inode # 8727328
+:) Found pid in inodeproc table
+;) new connection in connection-to-inode table before refresh.
+   inode # 2966588
+:) Found pid in inodeproc table
+
+Refreshing:
+sshd: root@pts/0/14284/0	0.152734	0.0316406
+/usr/local/aegis/aegis_client/aegis_10_33/AliYunDun/910/0	0.136719	0.0105469
+unknown TCP/0/0	0	0
+?  new connection not in connection-to-inode table before refresh.
+:( inode for connection not found after refresh.
+   inode # 0
+
+Refreshing:
+172.18.27.91:41792-100.100.0.31:80/0/0	1.26562	0.140039
+sshd: root@pts/0/14284/0	0.272266	0.0632813
+/usr/local/aegis/aegis_client/aegis_10_33/AliYunDun/910/0	0.136719	0.0105469
+unknown TCP/0/0	0	0
+
+Refreshing:
+172.18.27.91:41792-100.100.0.31:80/0/0	1.26562	0.140039
+sshd: root@pts/0/14284/0	0.367969	0.0738281
+/usr/local/aegis/aegis_client/aegis_10_33/AliYunDun/910/0	0.136719	0.0105469
+unknown TCP/0/0	0	0
+
+Refreshing:
+172.18.27.91:41792-100.100.0.31:80/0/0	1.26562	0.140039
+sshd: root@pts/0/14284/0	0.457422	0.084375
+/usr/local/aegis/aegis_client/aegis_10_33/AliYunDun/910/0	0.136719	0.0105469
+unknown TCP/0/0	0	0
+
+Refreshing:
+172.18.27.91:41792-100.100.0.31:80/0/0	1.26562	0.140039
+sshd: root@pts/0/14284/0	0.548437	0.105469
+/usr/local/aegis/aegis_client/aegis_10_33/AliYunDun/910/0	0.136719	0.0105469
+unknown TCP/0/0	0	0
+
+Refreshing:
+172.18.27.91:41792-100.100.0.31:80/0/0	1.26562	0.140039
+sshd: root@pts/0/14284/0	0.61875	0.116016
+/usr/local/aegis/aegis_client/aegis_10_33/AliYunDun/910/0	0.136719	0.0105469
+unknown TCP/0/0	0	0

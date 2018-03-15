@@ -1,0 +1,11 @@
+序号%游戏名%源目录%目标目录%部署后执行脚本
+1%sybp%root@xk3rd:/data/www/sybp%/data/res-s/sybp%sybp.sh
+2%ddz%root@xk3rd:/home/shijihengnuo/landlord-release/web-server%/data/res-s/ddz%ddz.sh
+3%gy%root@git:/home/git/guoyuan_houduan.gi%/data/res-s/gy%gy.sh
+4%nn%root@120.77.40.67:/data/game-front-release/jdnn/last%/data/res-s/nn%nn.sh
+5%nmw%root@120.77.40.67:/data/game-front-release/nmw/last%/data/res-s/nmw%nmw.sh
+6%hb%git%git@39.108.92.137:/home/git/hongbao_houduan.git%/data/res-s/hb%hb.sh
+7%pdk%root@xk3rd:/home/shijihengnuo/fastrun-release/game-server%/data/res-s/pdk%pdk.sh
+8%zp%git%git@39.108.92.137:/home/git/zhuanpan_houduan.git%/data/res-s/zp%zp.sh
+9%sdmj%root@xk3rd:/home/yingtao/sdmj%/data/res-s/sdmj%sdmj.sh
+10%test%root@test:~/atest%/tmp/%test.sh

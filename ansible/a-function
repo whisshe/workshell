@@ -1,0 +1,22 @@
+#!/bin/bash
+pwd=`pwd`
+ansible=`which ansible`
+rsync=`which rsync`
+hosts=$pwd/hosts
+#script-dir=$pwd
+###推送文件到指定机器的指定位置
+rpush(){
+	file=$1
+	user=$2
+	host=$3
+	target_dir=$4
+    rsync -avu $file $user@$host:$target_dir
+}
+###执行远程机器上的脚本
+ansi(){
+	user=$1
+	group=$2
+	script=$3
+	ansible -i $hosts -u $user $group -m shell -a "$script"
+}
+

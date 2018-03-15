@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="basePanelSkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="panelBg" strokeWeight="0" left="0" horizontalCenter="0" bottom="0" right="0" verticalCenter="0" top="0" fillAlpha="0.5" x="10" y="10" locked="true"/>
+	<e:Panel horizontalCenter="0" verticalCenter="-30" height="632">
+		<e:Image horizontalCenter="0" verticalCenter="0" height="632" scale9Grid="0,181,1216,77" source="panel_bg"/>
+		<e:Image source="panelSprite.default_tit" x="542" y="22"/>
+		<e:Button id="buttonOK" bottom="65" horizontalCenter="-240" label="确定">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_create_room"/>
+				<e:Label text="{label}" size="56" horizontalCenter="0.5" verticalCenter="-5" textColor="0x9e5a12"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="buttonOK0" bottom="65" horizontalCenter="-240" label="确定" visible="false">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_create_room"/>
+				<e:Label text="{label}" size="56" horizontalCenter="0.5" verticalCenter="-5" textColor="0x9e5a12"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="buttonCancel" bottom="65" y="10" horizontalCenter="240" label="取消">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_create_room"/>
+				<e:Label text="{label}" size="56" horizontalCenter="0.5" verticalCenter="-5" textColor="0x9e5a12"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="buttonCancel0" bottom="65" y="10" horizontalCenter="240" label="取消" visible="false">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_create_room"/>
+				<e:Label text="{label}" size="56" horizontalCenter="0.5" verticalCenter="-5" textColor="0x9e5a12"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Label id="contentLabel" width="900" height="300" horizontalCenter="0" verticalCenter="-11" size="46" textAlign="center" verticalAlign="middle" text="提示内容"/>
+	</e:Panel>
+</e:Skin>

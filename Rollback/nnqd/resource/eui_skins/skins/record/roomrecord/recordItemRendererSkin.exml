@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="recordItemRendererSkin" width="340" height="570" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image anchorOffsetX="0" anchorOffsetY="0" right="0" bottom="0" source="room_record_bg2"/>
+	<e:Image id="iconWin" width="230" height="230" source="room_record_icon_win" bottom="272" left="3" scaleX="0.8" scaleY="0.8" locked="true"/>
+	<e:Group width="340" height="130" horizontalCenter="0" top="0">
+		<e:Image left="36" verticalCenter="11" x="10" y="10" source="v2roomSprite.v2_seat_avt_bg" width="90" height="90"/>
+		<e:Image id="avatarImg" left="37" width="86" top="32" height="86" x="10" y="10"/>
+		<e:Label left="130" verticalCenter="11" size="30" id="nameLabel" bold="true" x="10" y="10" text="13012345678"/>
+		<e:Label id="idLabel" size="30" y="20" text="ID:11111" verticalCenter="32" left="130" x="20" visible="false"/>
+		<e:Rect id="rect_mask" width="87" height="87" x="37.5" y="32.5" ellipseWidth="20" ellipseHeight="20" fillColor="0x0034ff"/>
+	</e:Group>
+	<e:Group height="60" width="230" y="150" horizontalCenter="-10">
+		<e:Label text="通杀次数：" verticalCenter="0" size="34" left="20"/>
+		<e:Label id="killNum" verticalCenter="0" y="10" left="190" size="34"/>
+		<e:Rect width="230" height="1" horizontalCenter="0" bottom="0"/>
+	</e:Group>
+	<e:Group width="230" height="60" y="220" horizontalCenter="-10">
+		<e:Label size="34" verticalCenter="0" left="20" text="牛牛次数："/>
+		<e:Label id="bullNum" verticalCenter="0" y="10" size="34" left="190"/>
+		<e:Rect horizontalCenter="0" width="230" bottom="0" height="1"/>
+	</e:Group>
+	<e:Group y="290" height="60" width="230" horizontalCenter="-10">
+		<e:Label size="34" verticalCenter="0" left="20" text="胜利次数："/>
+		<e:Label id="winNum" verticalCenter="0" y="10" size="34" left="190"/>
+		<e:Rect horizontalCenter="0" width="230" bottom="0" height="1"/>
+	</e:Group>
+	<e:Group y="360" height="60" width="230" horizontalCenter="-10">
+		<e:Label size="34" verticalCenter="0" left="20" text="通赔次数："/>
+		<e:Label id="loseNum" verticalCenter="0" y="10" size="34" left="190"/>
+		<e:Rect horizontalCenter="0" width="230" bottom="0" height="1"/>
+	</e:Group>
+	<e:Group y="430" height="60" width="230" horizontalCenter="-10">
+		<e:Label size="34" verticalCenter="0" left="20" text="总战绩："/>
+		<e:Label id="totalScore" verticalCenter="0" y="10" size="34" left="150" text=""/>
+	</e:Group>
+</e:Skin>

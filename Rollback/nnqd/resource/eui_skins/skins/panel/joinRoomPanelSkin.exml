@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="joinRoomPanelSkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect strokeWeight="0" left="0" horizontalCenter="0" bottom="0" right="0" verticalCenter="0" top="0" fillAlpha="0.5" x="10" y="10" locked="true"/>
+	<e:Panel horizontalCenter="0" verticalCenter="0" width="1000" height="800">
+		<e:Image left="0" right="0" top="0" bottom="0" scale9Grid="0,194,1216,69" source="panel_bg"/>
+		<e:Image source="join_tit" top="23" horizontalCenter="1"/>
+		<e:Button id="closePanel" skinName="panelCloseSkin" width="90" height="90" x="915.32" y="6.48" scaleX="1.5" scaleY="1.5"/>
+		<e:List id="numberList" height="100" horizontalCenter="0.5" verticalCenter="-178"/>
+		<e:Group id="keyboardList" horizontalCenter="0" bottom="62" scaleX="0.8" scaleY="0.8" anchorOffsetY="0" width="980" height="550">
+			<e:Button id="keyboard_0" label="0" skinName="baseKeyboardSkin" horizontalCenter="0" scaleX="1.6" scaleY="1.6" bottom="16"/>
+			<e:Button id="keyboard_1" label="1" skinName="baseKeyboardSkin" y="0" scaleX="1.6" scaleY="1.6" left="0"/>
+			<e:Button id="keyboard_2" label="2" skinName="baseKeyboardSkin" y="0" horizontalCenter="0" scaleX="1.6" scaleY="1.6"/>
+			<e:Button id="keyboard_3" label="3" skinName="baseKeyboardSkin" y="0" right="0" scaleX="1.6" scaleY="1.6"/>
+			<e:Button id="keyboard_4" label="4" skinName="baseKeyboardSkin" y="135" left="0" scaleX="1.6" scaleY="1.6"/>
+			<e:Button id="keyboard_5" label="5" skinName="baseKeyboardSkin" y="135" horizontalCenter="0" scaleX="1.6" scaleY="1.6"/>
+			<e:Button id="keyboard_6" label="6" skinName="baseKeyboardSkin" y="135" right="0" scaleX="1.6" scaleY="1.6"/>
+			<e:Button id="keyboard_7" label="7" skinName="baseKeyboardSkin" y="270" left="0" scaleX="1.6" scaleY="1.6"/>
+			<e:Button id="keyboard_8" label="8" skinName="baseKeyboardSkin" y="270" horizontalCenter="0" scaleX="1.6" scaleY="1.6"/>
+			<e:Button id="keyboard_9" label="9" skinName="baseKeyboardSkin" y="270" right="0" scaleX="1.6" scaleY="1.6"/>
+			<e:Button id="keyboardCorrect" label="删除" anchorOffsetY="0" scaleX="1.6" scaleY="1.6" y="406" x="0">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="panelSprite_json.keyboard_correct" source.down="panelSprite_json.keyboard_correct"  x.down="3" y.down="3"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+
+			</e:Button>
+			<e:Button id="keyboardOK" label="确定" scaleX="1.6" scaleY="1.6" y="406" x="692">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="panelSprite_json.keyboard_ok" source.down="panelSprite_json.keyboard_ok"  x.down="3" y.down="3"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+
+			</e:Button>
+		</e:Group>
+	</e:Panel>
+</e:Skin>

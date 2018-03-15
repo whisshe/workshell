@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="recordDetailsSkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+
+	<e:Image horizontalCenter="0" verticalCenter="0" right="0" left="0" top="0" bottom="0" source="progress_bg"/>
+	<e:Group width="1920" height="157.88" horizontalCenter="0" top="0" anchorOffsetY="0">
+		<e:Rect width="1920" height="159.39" fillAlpha="0.4" horizontalCenter="0" top="0" anchorOffsetY="0"/>
+		<e:Label text="战绩详情" size="48" horizontalCenter="0" verticalCenter="0"/>
+		<e:Label id="backToRecord" text="返回" x="71" verticalCenter="0" size="40"/>
+	</e:Group>
+	<e:List id="recordList" width="1600" height="770" y="194" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0"/>
+
+
+	
+</e:Skin>

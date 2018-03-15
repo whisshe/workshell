@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="buttonTimesSkin" states="up,down,disabled" width="208" height="96" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image scale9Grid="35,20,125,36" horizontalCenter.down="3" verticalCenter.down="3" source="v2_btn_bg_times"/>
+	<e:Label text="{label}" size="42" horizontalCenter="0" horizontalCenter.down="3" verticalCenter.down="-2" verticalCenter="0" textColor="0x7a501f"/>
+</e:Skin>

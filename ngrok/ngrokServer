@@ -1,0 +1,5 @@
+#!/bin/bash
+# ngrok 安装编译配置服务端
+Gocert=`go version`
+[ echo $Gocert|grep "go version"|wc -l ] || 
+yum install install build-essential golang mercurial

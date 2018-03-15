@@ -1,0 +1,4 @@
+function killP() {
+    kill -9 $(ps fax|grep $1|grep -v grep|awk '{print $1}')
+}
+killP $1

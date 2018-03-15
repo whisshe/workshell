@@ -1,0 +1,9 @@
+#!/bin/bash
+#生成每天的日志文件
+dir=~/logs
+touch=`which touch`
+i=$((`date +%Y%m%d` - 5))
+while [ $i -lt `date +%Y%m%d` ];do
+    touch ${dir}/log_${i}_
+    i=$((i+1))
+done

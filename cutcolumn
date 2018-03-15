@@ -1,0 +1,5 @@
+#!/bin/bash
+#可以切割某一列，并且批量替换掉那一列的内容
+awk '{$1="hello";print $1}' file > tmp1
+awk 'sub($1,"")' file > tmp2
+paste -d "" tmp1 tmp2 > tmp3

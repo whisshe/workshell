@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="roomUISkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:bull="bull.*" xmlns:w="http://ns.egret.com/wing" xmlns:hall="bull.hall.*">
+	<e:Image horizontalCenter="0" verticalCenter="0" right="0" left="0" top="0" bottom="0" source="v2_room_bg_jpg" locked="true"/>
+    <e:List id="playersList" width="1920" horizontalCenter="0" height="1080" verticalCenter="0" locked="true"/>
+	<e:Image id="tipsText" source="tips_info_1" horizontalCenter="0" verticalCenter="0"  locked="true" visible="false"/>
+	<e:Component id="timeOutClock" horizontalCenter="-10" verticalCenter="0" locked="true" visible="false"/>
+	<e:Component id="userControlBar" horizontalCenter="0" bottom="0" locked="true" visible="false"/>
+	<e:Image id="bankerStatus" verticalCenter="0" horizontalCenter="0" source="v2_tips_tit_ding" locked="true" visible="false"/>
+	<e:Group id="roomTips" width="800" height="80" y="720" anchorOffsetY="0" anchorOffsetX="0" x="560" locked="true" visible="false">
+		<e:Image source="v2_tips_info_bg" x="0" y="0" scaleX="1" scaleY="1"/>
+		<e:Label id="lb_tips" text="等待其他玩家准备..." textColor="0xffaf42" scaleX="1" scaleY="1" x="277" y="22"/>
+	</e:Group>
+
+
+	<e:Button id="buttonChat" x="30" y="943" locked="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="v2_btn_menu_message" x.down="7" y.down="3"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Label id="currentTime" text="00:00" x="1774" y="1015" size="48" textColor="0xffbc75" locked="true"/>
+	<e:Image source="v2_room_info_bg" width="220" height="258" anchorOffsetX="0" x="30" y="30" locked="true"/>
+	<e:Label id="roomNo" text="888888" bottom="936" size="52" textColor="0xd3a94c" x="41" anchorOffsetX="0" width="200" textAlign="center" locked="true"/>
+	<e:Label id="currentNumber" text="第100/200局" size="34" y="155" horizontalCenter="-817.5" textAlign="center" textColor="0xffe2a3" locked="true"/>
+	<e:Label text="底注：" size="32" y="201" horizontalCenter="-862" textAlign="center" textColor="0xffe2a3" locked="true"/>
+	<e:Label id="basicAmount" text="1000" size="32" y="201" horizontalCenter="-780" textAlign="center" textColor="0xffe2a3" anchorOffsetX="0" width="100" locked="true"/>
+	<e:Rect id="mask_score" fillAlpha="0.3" left="0" right="0" top="0" bottom="0" locked="true" visible="false"/>
+	<e:Button id="buttonQuit" x="1788" y="30" locked="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="v2_btn_menu_back" x.down="3" y.down="3"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="buttonInvite" x="1663" y="30" locked="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="v2_btn_menu_invite" x.down="3" y.down="3"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+
+	</e:Button>
+	<e:ToggleButton id="buttonMusic" x="1536" y="30" locked="true">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="v2_btn_music_on" source.down="v2_btn_music_off"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:ToggleButton>
+	<e:Group id="gp_score_0" x="322.38" y="788.34" anchorOffsetY="0" locked="true"/>
+	<e:Group x="74.5" y="348.08" anchorOffsetY="0" id="gp_score_1" locked="true"/>
+	<e:Group x="400" y="58.77" anchorOffsetY="0" id="gp_score_2" locked="true"/>
+	<e:Group x="1352.33" y="58.77" anchorOffsetY="0" id="gp_score_3" locked="true"/>
+	<e:Group x="1634" y="348.08" anchorOffsetY="0" id="gp_score_4" locked="true"/>
+</e:Skin>

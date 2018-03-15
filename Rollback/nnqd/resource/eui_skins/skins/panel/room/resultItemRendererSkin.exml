@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="resultItemRendererSkin" width="1100" height="80" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:bull="bull.*">
+	<e:Rect id="bg" left="0" right="0" top="0" bottom="0" fillColor="0x404040" visible="false"/>
+	<e:Image id="img_banker" width="20" height="20" source="v2_icon_zhuang" scaleX="3" scaleY="3" left="0" verticalCenter="0" visible="false"/>
+	<e:Label id="nickname" textAlign="center" size="38" verticalAlign="middle" width="236" height="70" verticalCenter="0" horizontalCenter="-373" anchorOffsetX="0" textColor="0xffae2c" text=""/>
+	<e:Label id="bet" textAlign="center" size="38" verticalAlign="middle" width="193" height="70" verticalCenter="0" horizontalCenter="-158.5" anchorOffsetX="0" textColor="0xffae2c" text=""/>
+	<e:Label id="lb_type" textAlign="center" size="38" verticalAlign="middle" width="122" height="70" verticalCenter="0" horizontalCenter="352" anchorOffsetX="0" textColor="0xffae2c" text=""/>
+	<e:Label id="lb_score" height="70" verticalCenter="0" textAlign="center" size="38" y="20" verticalAlign="middle" width="137" right="0" anchorOffsetX="0" textColor="0xffae2c" text=""/>
+	<e:Group id="gp_poker" x="493" width="300" verticalCenter="0">
+	</e:Group>
+</e:Skin>

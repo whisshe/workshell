@@ -1,0 +1,17 @@
+#!/bin/bash
+#password list format : ip port username oldpasswd newpasswd
+P=/home/deploy/config_dep/changePass/
+Date=`date`
+read -p"which user'passwd  do you want to change: " user
+for Host in `cat $P/host`;do
+        NEWpass=`mkpasswd -5 $Host`
+        echo "$Host $NEWpass $Date" >> $P/Host_Pass 
+	echo "当前主机:$Host"
+	ssh $user@$Host "echo root:$NEWpass|/usr/sbin/chpasswd"
+	if [ $? -eq 0 ];then
+		echo "$Host change passwd success"
+	else
+		echo "$Host change failed"
+	fi
+done
+

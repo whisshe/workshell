@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="announcePanelSkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect strokeWeight="0" left="0" horizontalCenter="0" bottom="0" right="0" verticalCenter="0" top="0" fillAlpha="0.5" x="10" y="10" locked="true"/>
+	<e:Panel horizontalCenter="0" verticalCenter="0" locked="true">
+		<e:Image source="panel_bg" scale9Grid="0,189,1216,65" left="0" right="0" top="0" bottom="0"/>
+		<e:Image id="againTit" top="22" horizontalCenter="0" x="10" y="10" source="annouce_tit"/>
+		<e:Button right="17" id="closePanel" x="10" top="60" scaleX="0.7" scaleY="0.7">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_close" x.down="6" y.down="3"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Rect id="rectBg" width="1020" height="580" horizontalCenter="0" verticalCenter="55" fillColor="0x423C5D" visible="false"/>
+		<e:Label id="ancLabel1" text="严禁赌博公告：" size="46" left="99" top="199"/>
+		<e:Label id="ancLabel2" size="46" left="99" top="259" x="10" y="10" width="1030"/>		
+	</e:Panel>
+</e:Skin>

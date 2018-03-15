@@ -1,0 +1,6 @@
+#!/bin/bash
+###需要从wss转换到ws的域名
+wsstows(){
+    domain=$1
+	cd /etc/nginx/sites-available
+}

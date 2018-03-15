@@ -1,0 +1,36 @@
+#!/bin/bash
+
+cd /home/game/niuniu_backend/
+
+files=$(find ./ -mmin -5 -type f -print)
+filenumber=$(find ./ -mmin -5 -type f | wc -l)
+
+if [ $filenumber -lt 20 ]; then
+    echo "更新的文件列表..."
+    echo $files
+else
+    echo -n "更新的文件个数. "
+    echo $filenumber
+fi
+kill -9 $(ps fax |grep nnSer|grep -v grep |awk '{print $1}')
+kill -9 $(ps fax |grep nn_server|grep -v grep |awk '{print $1}')
+sleep 1
+
+composer update || exit 1
+php Main.php || exit 1
+sleep 2
+./tick_start.sh || exit 1
+
+PORT_COUNT=`netstat -lpnt | grep 9500 | wc -l`
+if [ $PORT_COUNT -lt 1 ]; then
+    echo "牛牛后端启动失败"
+    exit 1
+else
+    echo "牛牛后端启动成功"
+fi
+
+#将更新文件写入日志
+for file in $files;do
+echo $file--`date` >> deploy.log
+done
+exit 0
