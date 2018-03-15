@@ -1,0 +1,3 @@
+使用脚本前需要先向hosts写入需要安装zabbix-agent的机器名（在/etc/hosts里面配置好）
+depagent为远程安装脚本
+rsynctcp是同步tcpstatus.sh的脚本

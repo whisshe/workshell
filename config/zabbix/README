@@ -1,0 +1,14 @@
+Zabbix-Server---www
+安装位置                /zabbix/zabbix3
+配置文件位置        /zabbix/zabbix3/etc
+配置文件修改        zabbix_server.conf的最后
+报警脚本位置        /zabbix/zabbix3/share/zabbix/alertscripts
+
+
+
+zabbix-agent
+机器                                                          被监控机器                              
+配置文件                                        /etc/zabbix/zabbix_agentd.conf
+配置文件修改                                                 文件的最后
+监控功能脚本                                UserParameter定义的目录/zabbix/scripts/。逗号前面的为定义的key值
+

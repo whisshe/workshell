@@ -1,0 +1,6 @@
+#!/bin/bash
+##将最新添加的机器加入到www的/etc/hosts里面
+DIR=/home/deploy/config_dep/zabbix/tcp-check/
+A=`tail -n1 $DIR/host`
+B=`cat /etc/hosts|grep $A`
+echo $B > $DIR/ahost.txt

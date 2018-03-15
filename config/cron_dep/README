@@ -1,0 +1,3 @@
+cron_dep为发布脚本
+cron_shell为发布的功能脚本
+hosts为推送的目标主机

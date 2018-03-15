@@ -1,0 +1,44 @@
+server {
+	listen       80;
+	server_name  www.pkgame.net;
+	error_log  /var/log/www.pkgame.net.error.log ;
+	index index.html index.php;
+	charset utf-8;
+	root /data/www/yxdt/ship_platform_yxdt/www;
+
+	gzip on;
+	gzip_proxied any;
+	gzip_min_length  1024;
+
+
+	location / {
+		try_files $uri $uri/ /index.php?$query_string;
+	}
+
+	location ^~ /api/ { 
+		try_files $uri $uri/ /api.php?$query_string;
+	}
+
+	location ~ .*.(svn|git) {
+		deny all;
+	}
+
+	location ~ \.php$ {
+		fastcgi_pass unix:/var/run/php5-fpm.sock;
+		fastcgi_index index.php;
+		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+		include fastcgi_params;
+		try_files $uri $uri/ /index.php?$args;
+	}
+
+	error_page   500 502 503 504  /50x.html;
+	location = /50x.html {
+		root   html;
+	}
+
+}
+server { 
+	server_name pkgame.net; 
+	rewrite ^/(.*) http://www.pkgame.net/$1 permanent; 
+} 
+

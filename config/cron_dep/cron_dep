@@ -1,0 +1,15 @@
+#!/bin/bash
+#向线上机型推送相同的计划任务脚本和计划任务
+localdir=/home/deploy/config_dep/cron_dep/cron_shell
+remotedir=/tmp
+sh=mem_free
+function sync() {
+    scp   $localdir/$1 root@$2:$remotedir/
+}
+#用写好的sync  function 将脚本传送到指定的机器的指定目录下
+for cron_host in `cat hosts|awk 'NR>1{print}'`;do
+    sync $sh.sh $cron_host
+    sync cron_status.sh $cron_host
+done
+ansible -i hosts -u root cron_host -m shell -a "crontab -l|grep $sh.sh|wc -l > /tmp/cron-st;cat /tmp/cron-st"
+ansible -i hosts -u root cron_host -m shell -a "chmod +x /tmp/cron_status.sh;/tmp/cron_status.sh"

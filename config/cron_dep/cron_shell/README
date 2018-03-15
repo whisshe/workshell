@@ -1,0 +1,4 @@
+#脚本功能
+cron_status.sh    检查是否重复添加进crontab
+mem_free.sh       判断内存的剩余，并在内存不足时进行清理
+port_monitor      监测游戏进程端口，在端口释放时进行重启进程

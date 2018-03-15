@@ -1,0 +1,42 @@
+#!/bin/bash
+#对游戏端口进行监测，在端口释放后进行重启进程，确保进程正常
+#2018-2-23 lin
+ss=`which ss`
+gameInfo=/home/yingtao/gameMonitor/gameInfo
+stopgame(){
+    cd $gamedir
+    ./stop.sh
+}
+Time(){
+    date=`date  "+%Y%m%d %H%M%S"`
+}
+
+startgame(){
+    cd $gamedir
+    ./start.sh
+}
+portMonitor(){
+    if [ $portStatus -lt 1 ];then
+        Time
+	echo "$date $game is down,start later..." >> ~/gameMonitor/portMonitor.log
+	stopgame
+        sleep 2
+	startgame
+#        sleep 2
+#        Time
+#        portStatus=`ss -tpln|grep $port|wc -l`
+#        echo $portStatus
+#        [ $portStatus -lt 1 ]||echo "$date  $game is up now" >> ~/gameMonitor/portMonitor.log
+    fi
+}
+#port=cat $gameInfo|grep $game|awk '{print $2}'
+while true;do
+	for port in 6001;do 
+	    portStatus=`ss -tpln|grep $port|wc -l`
+	    game=`cat $gameInfo|grep $port|awk '{print $1}'`
+	    gamedir=`cat $gameInfo|grep $port|awk '{print $3}'`
+	    portMonitor
+	done
+        sleep 10
+done
+
