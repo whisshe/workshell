@@ -48,7 +48,7 @@ ngrok-server-install(){
     make release-server release-client
     cp bin/ngrokd /usr/bin/
 ####启动服务端
-    nohup ./bin/ngrokd -tlsKey=server.key -tlsCrt=server.crt -domain="$domain" -httpAddr=":80"&
+    nohup ngrokd -tlsKey=server.key -tlsCrt=server.crt -domain="$domain" -httpAddr=":80"&
 }
 
 #####functions
