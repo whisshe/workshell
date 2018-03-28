@@ -2,7 +2,7 @@
 #code一键回退
 pwd=`pwd`
 color(){
-	echo -e "\033[3$1 $2\033[0m"
+	echo -e "\033[3$1m $2\033[0m"
 }
 
 function copyright(){
@@ -31,35 +31,40 @@ while [ True ];do
     dest_machine=$(awk -v num=$number 'BEGIN {FS="%"} {if($1 == num) {print $3}}' $res)
     dest_machines=$(awk -v num=$number 'BEGIN {FS="%"} {if($1 == num) {print $4}}' $res)
     dest_directory=$(awk -v num=$number 'BEGIN {FS="%"} {if($1 == num) {print $5}}' $res)
+    user=$(awk -v num=$number 'BEGIN {FS="%"} {if($1 == num) {print $6}}' $res)
 
     case $number in
         [0-9]|[0-9][0-9])
         cd $pwd || exit 1
 
         #选择回退的版本
-        ssh game@$dest_machine "cd $dest_directory;ls|grep $name|tail -n3" > $name.version 
-        ssh game@$dest_machine "cd $dest_directory;ls|grep $name|tail -n3"|awk -F$name- '{print $2 }'|awk -F. '{print $1}' 
+        ssh $user@$dest_machine "cd $dest_directory;ls|grep $name|tail -n3" > $name.version 
+        ssh $user@$dest_machine "cd $dest_directory;ls|grep $name|tail -n3"|awk -F$name- '{print $2 }'|awk -F. '{print $1}' 
         color 4 填入后六位选择回退的版本 
         read codeVersion
+	if [ `cat $name.version|grep $codeVersion|wc -l` -eq 1 ];then
             case $codeVersion in 
                 [0-9]?????)
                 RollbackVersion=`cat $name.version|grep $codeVersion`
 		        #到对应机器的bak目录解压，然后替换掉项目目录
 		        for M in $dest_machines;do
-			        ssh game@$M "cd $dest_directory;tar zxf $RollbackVersion;rm -fr ../$name;mv $name ../"
-			        ssh game@$M "[ ! -d $dest_directory/../$name] || 
-			        echo -e "\033[34m##################"
-			        echo  " $M $name已经回退至$RollbackVersion版本 "
-			        echo -e "##################\033[0m"  "
-			    done
+			        ssh $user@$M "cd $dest_directory;tar zxf $RollbackVersion;rm -fr ../$name;mv $name ../"
+			        ssh $user@$M "[ ! -d $dest_directory/../$name] || 
+			        color 4 ##################
+			        color 4 $M $name已经回退至$RollbackVersion版本 
+			        color 4 ##################  "
+			done
 		        ;;
 		        q)
-				    exit
+				exit
 				;;
 		        *)
 		        color 1 输入的版本错误
 		        ;;
 		    esac
+		else
+		    color 1 $codeVersion is Wrong
+		fi
 		;;
 		q)
 		    exit
