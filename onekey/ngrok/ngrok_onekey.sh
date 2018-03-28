@@ -2,24 +2,24 @@
 #2018-3-26
 #一键搭建ngrok穿透服务  whisshe
 #####varibale
+pwd=`pwd`
 sysInfo=`uname -m|grep x86_64|wc -l`  #为1则是64位系统
 goInfo=`go version|grep "go version"|wc -l`
 goV=1.8.4
+domain=`cat $pwd/ngrok.cfg|awk '{print $2}'|awk -F: '{print $1}'`
 #####varibale
 
 #####functions
-goVersion(){
-    go version|awk '{print $3}'|awk -Fgo '{print $2}'
-}
+goVersion=`go version|awk '{print $3}'|awk -Fgo '{print $2}'`
 goVerify(){
     goverify=`echo $goVersion $goV |awk '{if ($1 > $2){print yes}}'`
 }
 go-32-install(){
-    tar zxvf code/go1.8.4.linux-386.tar.gz -C /usr/local/
+    tar zxvf $pwd/code/go1.8.4.linux-386.tar.gz -C /usr/local/
     ln -s /usr/local/go/bin/* /usr/bin/
 }
 go-64-install(){
-    tar zxvf code/go1.8.4.linux-amd64.tar.gz -C /usr/local/
+    tar zxvf $pwd/code/go1.8.4.linux-amd64.tar.gz -C /usr/local/
     ln -s /usr/local/go/bin/* /usr/bin/
 }
 go-install(){
@@ -32,10 +32,8 @@ go-install(){
         fi
 }
 ngrok-server-install(){
-    tar zxvf code/ngrok.tar.gz -C /usr/local/
+    tar zxvf $pwd/code/ngrok.tar.gz -C /usr/local/
     cd /usr/local/ngrok
-    echo "输入你的服务根域名"
-    read domain
 #### 配置证书信息，以生成专属的客户端
     NGROK_DOMAIN="$domain"
     openssl genrsa -out base.key 2048
@@ -52,4 +50,6 @@ ngrok-server-install(){
 }
 
 #####functions
-
+goVerify
+go-install
+ngrok-server-install
