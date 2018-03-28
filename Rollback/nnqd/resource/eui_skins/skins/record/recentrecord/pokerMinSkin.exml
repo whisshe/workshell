@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="pokerMinSkin" width="138" height="188" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Group id="front" width="138" height="188" horizontalCenter="0" verticalCenter="0">
-		<e:Image id="front_bg" source="poker_front" horizontalCenter="0" verticalCenter="0" height="100%"/>
-		<e:Image id="number" source="red_1" left="6" top="5" scaleX="2" scaleY="2"/>
-		<e:Image id="suitX" right="8" bottom="10" source="diamond_x" scaleX="0.8" scaleY="0.8" visible="false"/>
-		<e:Image id="suitF" source="diamond_jack" right="-3" bottom="-1" scaleX="0.8" scaleY="0.8" visible="false"/>
-	</e:Group>
-</e:Skin>

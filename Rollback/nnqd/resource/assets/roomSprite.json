@@ -1,7 +1,0 @@
-{"file":"roomSprite.png","frames":{
-"icon_circle_gray":{"x":955,"y":0,"w":52,"h":52,"offX":0,"offY":0,"sourceW":52,"sourceH":52},
-"icon_circle_red":{"x":901,"y":0,"w":52,"h":52,"offX":0,"offY":0,"sourceW":52,"sourceH":52},
-"tips_info_1":{"x":0,"y":582,"w":149,"h":38,"offX":0,"offY":0,"sourceW":149,"sourceH":38},
-"tips_info_2":{"x":0,"y":542,"w":236,"h":38,"offX":0,"offY":0,"sourceW":236,"sourceH":38},
-"tips_info_3":{"x":328,"y":0,"w":571,"h":40,"offX":0,"offY":0,"sourceW":571,"sourceH":40},
-"room_record_bg2":{"x":0,"y":0,"w":326,"h":540,"offX":0,"offY":0,"sourceW":326,"sourceH":554}}}

@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="baseKeyboardSkin" states="up,down,disabled" width="180" height="80"
-        xmlns:e="http://ns.egret.com/eui">
-	<e:Rect fillColor="0x6408af" left="0" right="0" top="0" bottom="0" ellipseWidth="50" ellipseHeight="50" visible="false"/>
-	<e:Image x.down="3" y.down="3" width="180" height="80" x="0" y="0" source="panelSprite_json.keyboard"/>
-	<e:Label size="52" textAlign="center" verticalAlign="middle" anchorOffsetY="0" x.down="78.5" y.down="12" x="75.5" y="9" text="{label}"/>
-</e:Skin>

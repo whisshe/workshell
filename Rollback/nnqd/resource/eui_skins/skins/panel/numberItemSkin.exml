@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="numberItemSkin" width="120" height="100" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image source="text_box" horizontalCenter="0" bottom="0"/>
-	<e:Label id="numLabel" verticalCenter="0" horizontalCenter="0" bottom="7" size="82" text="9" textColor="0xffe4a5"/>
-</e:Skin>

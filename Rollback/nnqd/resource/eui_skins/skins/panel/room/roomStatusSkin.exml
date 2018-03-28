@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="roomStatusSkin" width="1920" height="580" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Group id="hrzGroup" width="1920" height="580" horizontalCenter="0" verticalCenter="0">
-		<e:Image id="bankerStatus" source="tips_tit_ding" horizontalCenter="-140" verticalCenter="0" />
-		<e:Image id="tipsImage" source="tips_info_1" horizontalCenter="0" verticalCenter="0"/>
-	</e:Group>
-</e:Skin>
