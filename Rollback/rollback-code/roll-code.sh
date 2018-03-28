@@ -42,30 +42,36 @@ while [ True ];do
         ssh $user@$dest_machine "cd $dest_directory;ls|grep $name|tail -n3"|awk -F$name- '{print $2 }'|awk -F. '{print $1}' 
         color 4 填入后六位选择回退的版本 
         read codeVersion
-	if [ `cat $name.version|grep $codeVersion|wc -l` -eq 1 ];then
+	codeDate=`cat $name.version|grep $codeVersion|awk -F$name- '{print $2}'|awk -F. '{print $1}'`
+	RollbackVersion=`cat $name.version|grep $codeVersion`
+	codeVersionNum=`cat $name.version| grep $codeVersion|wc -l`
+	if [ $codeVersionNum -eq 1 ];then
             case $codeVersion in 
                 [0-9]?????)
-                RollbackVersion=`cat $name.version|grep $codeVersion`
-		        #到对应机器的bak目录解压，然后替换掉项目目录
-		        for M in $dest_machines;do
-			        ssh $user@$M "cd $dest_directory;tar zxf $RollbackVersion;rm -fr ../$name;mv $name ../"
-			        ssh $user@$M "[ ! -d $dest_directory/../$name] || 
-			        color 4 ##################
-			        color 4 $M $name已经回退至$RollbackVersion版本 
-			        color 4 ##################  "
-			done
-		        ;;
-		    esac
-		else
-		    color 1 "$codeVersion is Wrong"
-		fi
-		;;
-		q)
-		    exit
-		;;    
-		*)
-	        color 1 输入的序号错误
-	    ;;
+		    #到对应机器的bak目录解压，然后替换掉项目目录
+		    for M in $dest_machines;do
+			ssh $user@$M "cd $dest_directory;tar zxf $RollbackVersion;rm -fr ../$name;mv $name ../"
+			rollStatus=`ssh $user@$M "[ ! -d $dest_directory/../$name ] || echo yes"` 
+			if [[ $rollStatus == yes ]];then
+			    color 6 "##################"
+			    color 6 "$M $name已经回退至$codeDate版本"
+			    color 6 "##################" 
+			else 
+			    color 1 "$M $name回退的目录错误"
+			fi
+		    done
+		    ;;
+	    esac
+	else	
+	    color 1 "$codeVersion is Wrong"
+	fi
+	;;
+    q)
+	exit
+	;;    
+	*)
+	color 1 输入的序号错误
+	;;
     esac
 done
 }
