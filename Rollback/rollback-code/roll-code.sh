@@ -55,15 +55,9 @@ while [ True ];do
 			        color 4 ##################  "
 			done
 		        ;;
-		        q)
-				exit
-				;;
-		        *)
-		        color 1 输入的版本错误
-		        ;;
 		    esac
 		else
-		    color 1 $codeVersion is Wrong
+		    color 1 "$codeVersion is Wrong"
 		fi
 		;;
 		q)
