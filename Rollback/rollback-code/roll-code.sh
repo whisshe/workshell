@@ -37,7 +37,7 @@ while [ True ];do
         cd $pwd || exit 1
 
         #选择回退的版本
-        ssh game@$dest_machine "cd $dest_directory;ls|grep $name|tail -n3" > $name.version
+        ssh game@$dest_machine "cd $dest_directory;ls|grep $name|tail -n3" > $name.version 
         ssh game@$dest_machine "cd $dest_directory;ls|grep $name|tail -n3"|awk -F$name- '{print $2 }'|awk -F. '{print $1}' 
         color 4 填入后六位选择回退的版本 
         read codeVersion
