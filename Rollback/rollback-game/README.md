@@ -1,5 +1,5 @@
-### 执行脚本接 code项目参数或者不接参数 选择数字，进行相应的code项目回退
+### 执行脚本选择数字，进行相应的game项目回退
 ### 根据时间戳来确定回退版本(默认显示三个版本)
-### code.list为code项目列表
-### code.resource为code所在服务器以及目录
+### game.list为game项目列表
+### game.resource为game所在服务器以及目录
 ### 
