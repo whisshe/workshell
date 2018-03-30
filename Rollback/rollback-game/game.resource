@@ -25,3 +25,4 @@
 24%syphzhd%gamed%/home/game/Rollback/server%game%/home/game/syphz%syphzhd
 25%wzqhd%gamec%/home/game/Rollback/server%game%/home/game/wzq%wzqhd
 26%wzqqd%gamec%/home/game/Rollback/client%game%/home/game/wzq%wzqqd
+27%testqd%xkdev%/tmp/test/bak%root%/tmp/test%testqd

@@ -17,9 +17,9 @@ function underline(){
 }
 front_or_server(){
     if [ `echo $1|grep qd|wc -l` -eq 1 ];then
-	game.id=front
+	gameid="front"
     else
-	game.id=server
+	gameid="server"
     fi
 }
 
@@ -74,18 +74,18 @@ while [ True ];do
         cd $pwd || exit 1
 
         #选择回退的版本
-        ssh $user@$dest_machine "cd $dest_directory;ls|grep $name|tail -n3" > $name.version 
+        ssh $user@$dest_machine "cd $dest_directory;ls|grep $name|tail -n3" > gameVersion/$name.version 
         ssh $user@$dest_machine "cd $dest_directory;ls|grep $name|tail -n3"|awk -F$name- '{print $2 }' 
         color 4 填入后六位选择回退的版本 
         read gameVersion
-	gameDate=`cat $name.version|grep $gameVersion|awk -F$name- '{print $2}'`
-	gameVersionNum=`cat $name.version| grep $name-$gameDate|wc -l`
+	gameDate=`cat gameVersion/$name.version|grep $gameVersion|awk -F$name- '{print $2}'`
+	gameVersionNum=`cat gameVersion/$name.version| grep $gameVersion|wc -l`
 	if [ $gameVersionNum -eq 1 ];then
-            front_or_server
-	    [ $game.id == front ] || server_roll
+            front_or_server $name
+	    [ $gameid == front ] || server_roll
 	    front_roll
 	else	
-	    color 1 "$gameVersion is Wrong"
+	    color 1 "输入的版本号$gameVersion is Wrong"
 	fi
 	;;
     q)
