@@ -1,5 +1,5 @@
 #!/bin/bash
-#game一键回退
+#cdn一键回退
 pwd=`pwd`
 color(){
 	echo -e "\033[3$1m $2\033[0m"
@@ -7,7 +7,7 @@ color(){
 
 function copyright(){
     echo -e "\033[34m##################"
-    echo  " 喜扣游戏回退平台 "
+    echo  " 喜扣CDN回退平台 "
     echo -e "##################\033[0m"
     echo
 }
@@ -15,98 +15,39 @@ function copyright(){
 function underline(){
     echo "-----------------------------------------"
 }
-front_or_server(){
-    if [ `echo $1|grep qd|wc -l` -eq 1 ];then
-	gameid="front"
-    else
-	gameid="server"
-    fi
-}
 
-front_roll(){
-	#到对应机器删掉目前的软连接，然后替换成指定版本的项目目录
-	ssh $user@$dest_machine "cd $dest_gameroot_directory;rm $dest_game_directory;ln -s $dest_directory/$name-$gameDate ./$dest_game_directory"
-	rollStatus=`ssh $user@$dest_machine "[ ! -d $dest_gameroot_directory/$dest_game_directory ] || echo yes"` 
-	if [[ $rollStatus == yes ]];then
-	    color 6 "##################"
-	    color 6 "$dest_machine $name已经回退至$gameDate版本"
-	    color 6 "##################" 
-	else 
-	    color 1 "$dest_machine $name回退的目录错误"
-	fi
-}
-
-server_roll(){
-	#到对应机器删掉目前的软连接，然后替换成指定版本的项目目录,重启游戏后端
-	ssh $user@$dest_machine "cd $dest_gameroot_directory/$dest_game_directory;./stopgame"
-	ssh $user@$dest_machine "cd $dest_gameroot_directory;rm $dest_game_directory;ln -s $dest_directory/$name-$gameDate ./$dest_game_directory"
-	rollStatus=`ssh $user@$dest_machine "[ ! -d $dest_gameroot_directory/$dest_game_directory ] || echo yes"` 
-	if [[ $rollStatus == yes ]];then
-	    ssh $user@$dest_machine "cd $dest_gameroot_directory/$dest_game_directory;./startgame"
-	    ssh $user@$dest_machine "cd $dest_gameroot_directory/$dest_game_directory;./checkgame"
-	    color 6 "##################"
-	    color 6 "$dest_machine $name已经回退至$gameDate版本"
-	    color 6 "##################" 
-	else 
-	    color 1 "$dest_machine $name回退的目录错误"
-	fi
-}
-
-
-gamed_server_roll(){
-	#到对应机器删掉目前的软连接，然后替换成指定版本的项目目录,重启游戏后端
-	ssh $user@$dest_machine "cd $dest_gameroot_directory/$dest_game_directory"
-	ssh $user@$dest_machine "cd $dest_gameroot_directory;rm $dest_game_directory;ln -s $dest_directory/$name-$gameDate ./$dest_game_directory"
-	rollStatus=`ssh $user@$dest_machine "[ ! -d $dest_gameroot_directory/$dest_game_directory ] || echo yes"` 
-	if [[ $rollStatus == yes ]];then
-	    ssh $user@$dest_machine "cd $dest_gameroot_directory/$dest_game_directory;./${name}start"
-	    ssh $user@$dest_machine "cd $dest_gameroot_directory/$dest_game_directory"
-	    color 6 "##################"
-	    color 6 "$dest_machine $name已经回退至$gameDate版本"
-	    color 6 "##################" 
-	else 
-	    color 1 "$dest_machine $name回退的目录错误"
-	fi
-}
 function main(){
 
 while [ True ];do
 
     echo "序号 | 项目名"
     underline
-    awk 'BEGIN {FS="%"} {printf("\033[0;31m% 3s \033[m | %10s\n",$1,$2)}' $pwd/game.list
+    awk 'BEGIN {FS="%"} {printf("\033[0;31m% 3s \033[m | %10s\n",$1,$2)}' $pwd/cdn.list
     underline
     echo -e '\033[36m输入序号选择项目，输入q退出\033[0m'
     read -p '[*] 选择项目: ' number
-    res="$pwd/game.resource"
+    res="$pwd/cdn.resource"
     name=$(awk -v num=$number 'BEGIN {FS="%"} {if($1 == num) {print $2}}' $res)
-    dest_machine=$(awk -v num=$number 'BEGIN {FS="%"} {if($1 == num) {print $3}}' $res)
-    dest_directory=$(awk -v num=$number 'BEGIN {FS="%"} {if($1 == num) {print $4}}' $res)
-    user=$(awk -v num=$number 'BEGIN {FS="%"} {if($1 == num) {print $5}}' $res)
-    dest_gameroot_directory=$(awk -v num=$number 'BEGIN {FS="%"} {if($1 == num) {print $6}}' $res)
-    dest_game_directory=$(awk -v num=$number 'BEGIN {FS="%"} {if($1 == num) {print $7}}' $res)
+    dest_cdnroot_directory=$(awk -v num=$number 'BEGIN {FS="%"} {if($1 == num) {print $3}}' $res)
+    dest_cdnbak_directory=$(awk -v num=$number 'BEGIN {FS="%"} {if($1 == num) {print $4}}' $res)
 
     case $number in
         [0-9]|[0-9][0-9])
         cd $pwd || exit 1
 
         #选择回退的版本
-        ssh $user@$dest_machine "cd $dest_directory;ls|grep $name|tail -n3" > gameVersion/$name.version 
-        ssh $user@$dest_machine "cd $dest_directory;ls|grep $name|tail -n3"|awk -F$name- '{print $2 }' 
+        [ -d cdnVersion ] || mkdir cdnVersion
+        ssh game@apia "cd $dest_cdnbak_directory;ls|grep $name|tail -n3" > cdnVersion/$name.version 
+        ssh game@apia "cd $dest_cdnbak_directory;ls|grep $name|tail -n3"|awk -F${name}cdn- '{print $2 }' 
         color 4 填入后六位选择回退的版本 
-        read gameVersion
-	gameDate=`cat gameVersion/$name.version|grep $gameVersion|awk -F$name- '{print $2}'`
-	gameVersionNum=`cat gameVersion/$name.version| grep $gameVersion|wc -l`
-	if [ $gameVersionNum -eq 1 ];then
-	    if [[ $name == sdmjhd || $name == sybphd || $name == wnmjhd || $name == syphzhd ]];then
-		gamed_server_roll
-	    else
-		front_or_server $name
-		[ $gameid == front ] || server_roll
-		front_roll
-	    fi
+        read cdnVersion
+	cdnDate=`cat cdnVersion/$name.version|grep $cdnVersion|awk -F${name}cdn- '{print $2}'`
+	cdnVersionNum=`cat cdnVersion/$name.version| grep $cdnVersion|wc -l`
+	if [ $cdnVersionNum -eq 1 ];then
+		ssh game@apia "rm ${dest_cdnroot_directory}/resource;ln -s ${dest_cdnbak_directory} ${dest_cdnroot_directory}/resource"
+		ssh game@apia "ls -l ${dest_cdnroot_directory}"
 	else	
-	    color 1 "输入的版本号$gameVersion is Wrong"
+	    color 1 "输入的版本号$cdnVersion is Wrong"
 	fi
 	;;
     q)

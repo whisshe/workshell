@@ -16,3 +16,4 @@
 15%wnmj%/data/res-s/wnmj
 16%syphz%/data/res-s/syphz
 17%tdh%/data/res-s/tdh
+18%test%/data/res-s/test
