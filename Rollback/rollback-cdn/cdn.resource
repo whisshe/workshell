@@ -1,9 +1,18 @@
-1%game-center-react%apia%apia apix www%/data/fe/bak%game
-2%pkgame-libs%xkdev%xkdev%/data/fe/jssdk/0.0.1/pkgame-libs/bak%root
-3%upload%apia%apia apix%/data/www/game/bak%game
-4%admin%apia%apia apix%/data/www/game/bak%game
-5%game_manager%apia%apia apix%/data/www/game/bak%game
-6%api%apia%apia apix www%/data/www/game/bak%game
-7%php-framework%apia%apia apix www servicea%/data/www/game/bak%game
-8%service%servicea%servicea%/data/www/game/bak%game
-9%test1%xkdev%xkdev%/tmp/bak%root
+序号%游戏名%目标目录
+1%sybp%/data/res-s/sybp
+2%ddz%/data/res-s/ddz
+3%xkgy%/data/res-s/xkgy
+4%nn%/data/res-s/nn
+5%nmw%/data/res-s/nmw
+6%qhb%/data/res-s/qhb
+7%pdk%/data/res-s/pdk
+8%zhuanpan%/data/res-s/zhuanpan
+9%sdmj%/data/res-s/sdmj
+10%common%/data/res-s/common
+11%gamecenter%/data/res-s/gamecenter
+12%media%/data/res-s/media4cdn
+13%apkdownload%/data/res-s/apkdownload
+14%zip4app%/data/res-s/zip4app
+15%wnmj%/data/res-s/wnmj
+16%syphz%/data/res-s/syphz
+17%tdh%/data/res-s/tdh
