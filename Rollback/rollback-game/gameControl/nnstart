@@ -1,0 +1,16 @@
+#!/bin/bash
+#启动牛牛
+source functions
+
+cd /home/game/niuniu_backend
+color 2 "composer update ..."
+composer update || exit 1
+color 4 "牛牛进程启动中...."
+php Main.php || exit 1
+sleep 2
+color 4 "牛牛定时器启动中....."
+/usr/local/node/bin/node nnServerTick.js >> tick.log &
+sleep 2
+color 4 "牛牛机器人启动中....."
+cd /home/game/Rollback/nnRobot
+./start.sh

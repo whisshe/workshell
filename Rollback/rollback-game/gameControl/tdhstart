@@ -1,0 +1,7 @@
+#!/bin/bash
+#启动推倒胡
+source functions
+
+cd /home/game/tuidaohu-release/game-server
+rm logs/*
+pm2 start app.js

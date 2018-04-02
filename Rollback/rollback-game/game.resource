@@ -5,8 +5,8 @@
 3%ddzhd%gameb%/home/game/Rollback/server%game%/home/game/landlord-release%game-server
 18%pdkqd%gamec%/home/game/Rollback/client%game%/home/game/fastrun-release%game-server
 4%pdkhd%gamec%/home/game/Rollback/server%game%/home/game/fastrun-release%web-server
-5%sdmj%gamed%/home/game/Rollback/server%game%/home/game%sdmj
-6%sdmjht%gamed%/home/game/Rollback/client%game%/home/game%front
+5%sdmjhd%gamed%/home/game/Rollback/server%game%/home/game%sdmj
+6%sdmjqd%gamed%/home/game/Rollback/client%game%/home/game%front
 7%gyqd%gameb%/home/game/Rollback/client%game%/home/game/xkgy%gyqd
 8%gyhd%gameb%/home/game/Rollback/server%game%/home/game/xkgy%gyhd
 9%nmwqd%gamec%/home/game/Rollback/client%game%/home/game/nmw%nmwqd

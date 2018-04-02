@@ -1,0 +1,9 @@
+#!/bin/bash
+#启动果园
+source functions
+
+cd /home/game/xkgy/gyhd
+color 2 "composer update ..."
+composer update || exit 1
+color 4 "果园进程启动中...."
+php /home/game/xkgy/gyhd/Main.php || exit 1

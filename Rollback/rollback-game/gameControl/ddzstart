@@ -1,0 +1,7 @@
+#!/bin/bash
+#启动斗地主
+source functions
+
+cd /home/game/landlord-release/game-server
+rm logs/*
+pm2 start app.js

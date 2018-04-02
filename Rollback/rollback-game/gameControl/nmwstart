@@ -1,0 +1,16 @@
+#!/bin/bash
+#启动牛魔王
+source functions
+
+cd /home/game/nmw/nmwhd
+color 2 "composer update ..."
+composer update || exit 1
+color 4 "牛魔王进程启动中...."
+php Main.php || exit 1
+sleep 2
+color 4 "牛魔王定时器启动中....."
+/usr/local/node/bin/node nmwServerTick.js >> tick.log &
+sleep 2
+color 4 "牛魔王机器人启动中....."
+cd /home/game/Rollback/nmwRobot
+./start.sh

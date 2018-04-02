@@ -1,0 +1,5 @@
+#!/bin/bash
+
+##杀掉红包主进程
+cd /home/game/hbhd
+/bin/bash server.sh

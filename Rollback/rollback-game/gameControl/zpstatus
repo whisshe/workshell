@@ -1,0 +1,7 @@
+#!/bin/bash
+# 检查转盘相关进程情况
+source functions
+
+zpPort_status=$(gamePort_status 8533)
+detect $zpPort_status 2 转盘端口
+

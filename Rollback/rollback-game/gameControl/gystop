@@ -1,0 +1,5 @@
+#!/bin/bash
+
+##杀掉果园主进程
+cd /home/game/xkgy/gyhd
+/bin/bash server.sh

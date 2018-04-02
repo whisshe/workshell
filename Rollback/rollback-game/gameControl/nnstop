@@ -1,0 +1,6 @@
+#!/bin/bash
+
+##杀掉牛牛主进程和定时器
+kill -9 $(ps fax |grep nnSer|grep -v grep |awk '{print $1}')
+kill -9 $(ps fax |grep nn_server|grep -v grep |awk '{print $1}')
+

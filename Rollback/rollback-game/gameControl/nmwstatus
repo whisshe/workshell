@@ -1,0 +1,13 @@
+#!/bin/bash
+# 检查牛魔王相关进程情况
+source functions
+##牛魔王主进程
+nmw_status=$(game_status crazyniu_server)
+##牛魔王定时器
+tick_status=$(tick_status nmwSer)
+##牛魔王端口
+nnPort_status=$(gamePort_status 8531)
+detect $nmw_status 2 牛魔王进程
+detect $tick_status 2 牛魔王定时器
+detect $nnPort_status 2 牛魔王端口
+

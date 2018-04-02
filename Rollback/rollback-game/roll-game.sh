@@ -51,6 +51,23 @@ server_roll(){
 	    color 1 "$dest_machine $name回退的目录错误"
 	fi
 }
+
+
+gamed_server_roll(){
+	#到对应机器删掉目前的软连接，然后替换成指定版本的项目目录,重启游戏后端
+	ssh $user@$dest_machine "cd $dest_gameroot_directory/$dest_game_directory"
+	ssh $user@$dest_machine "cd $dest_gameroot_directory;rm $dest_game_directory;ln -s $dest_directory/$name-$gameDate ./$dest_game_directory"
+	rollStatus=`ssh $user@$dest_machine "[ ! -d $dest_gameroot_directory/$dest_game_directory ] || echo yes"` 
+	if [[ $rollStatus == yes ]];then
+	    ssh $user@$dest_machine "cd $dest_gameroot_directory/$dest_game_directory;./${name}start"
+	    ssh $user@$dest_machine "cd $dest_gameroot_directory/$dest_game_directory"
+	    color 6 "##################"
+	    color 6 "$dest_machine $name已经回退至$gameDate版本"
+	    color 6 "##################" 
+	else 
+	    color 1 "$dest_machine $name回退的目录错误"
+	fi
+}
 function main(){
 
 while [ True ];do
@@ -81,9 +98,13 @@ while [ True ];do
 	gameDate=`cat gameVersion/$name.version|grep $gameVersion|awk -F$name- '{print $2}'`
 	gameVersionNum=`cat gameVersion/$name.version| grep $gameVersion|wc -l`
 	if [ $gameVersionNum -eq 1 ];then
-            front_or_server $name
-	    [ $gameid == front ] || server_roll
-	    front_roll
+	    if [[ $name == sdmjhd || $name == sybphd || $name == wnmjhd || $name == syphzhd ]];then
+		gamed_server_roll
+	    else
+		front_or_server $name
+		[ $gameid == front ] || server_roll
+		front_roll
+	    fi
 	else	
 	    color 1 "输入的版本号$gameVersion is Wrong"
 	fi

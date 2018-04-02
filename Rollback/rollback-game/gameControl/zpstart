@@ -1,0 +1,9 @@
+#!/bin/bash
+#启动转盘
+source functions
+
+cd /home/game/zphd
+color 2 "composer update ..."
+composer update || exit 1
+color 4 "转盘进程启动中...."
+php /home/game/zphd/Main.php || exit 1

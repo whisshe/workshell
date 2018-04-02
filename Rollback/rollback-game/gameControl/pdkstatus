@@ -1,0 +1,12 @@
+#!/bin/bash
+# 检查跑得快相关进程情况
+source functions
+
+
+pdk_status=$(game_status app.js)
+pdkPort_status1=$(gamePort_status 4014)
+pdkPort_status2=$(gamePort_status 8513)
+detect $pdk_status 5 跑得快进程
+detect $pdkPort_status1 5 跑得快端口
+detect $pdkPort_status2 5 跑得快端口
+

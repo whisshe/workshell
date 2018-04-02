@@ -1,0 +1,13 @@
+#!/bin/bash
+# 检查牛牛相关进程情况
+source functions
+
+
+
+nn_status=$(game_status nn_server)
+tick_status=$(tick_status nnSer)
+nnPort_status=$(gamePort_status 9500)
+detect $nn_status 2 牛牛进程
+detect $nnPort_status 2 牛牛端口
+detect $tick_status 2 牛牛定时器
+

@@ -1,0 +1,12 @@
+#!/bin/bash
+# 检查推倒胡相关进程情况
+source functions
+
+
+tdh_status=$(game_status app.js)
+tdhPort_status1=$(gamePort_status 8554)
+tdhPort_status2=$(gamePort_status 8542)
+detect $tdh_status 5 推倒胡进程
+detect $tdhPort_status1 5 推倒胡端口
+detect $tdhPort_status2 5 推倒胡端口
+

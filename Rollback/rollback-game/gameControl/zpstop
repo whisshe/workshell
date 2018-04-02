@@ -1,0 +1,5 @@
+#!/bin/bash
+
+##杀掉转盘主进程
+cd /home/game/zphd
+/bin/bash server.sh

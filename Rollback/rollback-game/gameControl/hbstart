@@ -1,0 +1,9 @@
+#!/bin/bash
+#启动红包
+source functions
+
+cd /home/game/hbhd
+color 2 "composer update ..."
+composer update || exit 1
+color 4 "红包进程启动中...."
+php /home/game/hbhd/Main.php || exit 1

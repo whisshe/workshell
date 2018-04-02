@@ -1,0 +1,12 @@
+#!/bin/bash
+# 检查斗地主相关进程情况
+source functions
+
+
+ddz_status=$(game_status app.js)
+ddzPort_status1=$(gamePort_status 3014)
+ddzPort_status2=$(gamePort_status 8513)
+detect $ddz_status 5 斗地主进程
+detect $ddzPort_status1 5 斗地主端口
+detect $ddzPort_status2 5 斗地主端口
+

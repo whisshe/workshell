@@ -1,0 +1,7 @@
+#!/bin/bash
+# 检查果园相关进程情况
+source functions
+
+gyPort_status=$(gamePort_status 8532)
+detect $gyPort_status 2 果园端口
+

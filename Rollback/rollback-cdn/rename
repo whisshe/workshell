@@ -1,0 +1,21 @@
+#!/bin/bash
+# 批量修改文件名
+# rename
+pwd=`pwd`
+cd $pwd
+read -p "被替换的关键词: " old
+read -p "替换成的关键词: " new
+n=1 
+rm old_name new_name  > /dev/null  2>&1
+ls|grep $old >> old_name 
+[ $? -eq 0 ] || echo "你输入的关键词不存在";exit 1
+cat old_name|grep $old|sed  "s/$old/$new/g"  > new_name
+lines=`cat old_name|wc -l`
+while [ $n -le $lines ];do
+    name1=`cat old_name|awk -v num=$n 'NR == num {print }'` 
+    name2=`cat new_name|awk -v num=$n 'NR == num{print }'`
+    echo $name1
+    mv $name1 $name2
+    n=$((n+1))
+done
+rm old_name new_name  > /dev/null  2>&1

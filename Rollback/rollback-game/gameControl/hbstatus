@@ -1,0 +1,7 @@
+#!/bin/bash
+# 检查红包相关进程情况
+source functions
+
+hbPort_status=$(gamePort_status 8532)
+detect $hbPort_status 2 红包端口
+
